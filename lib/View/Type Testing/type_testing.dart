@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:urdu_fix/View/Components/Reusable%20Components/reusable_txt.dart';
 import 'package:urdu_fix/View/Utils/constants.dart';
+import 'package:urdu_fix/View/Utils/utils.dart';
 
 class TypeTestingScreen extends StatelessWidget {
   TypeTestingScreen({
@@ -29,9 +30,7 @@ class TypeTestingScreen extends StatelessWidget {
     if (isUrdu(text)) {
       speakUrdu(text);
     } else {
-      if (kDebugMode) {
-        print('The text is not in Urdu.');
-      }
+     Utils().toastMessage('Text is not in urdu!');
       // Handle or display a message for non-Urdu text here
     }
   }

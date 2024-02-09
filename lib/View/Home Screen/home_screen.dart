@@ -43,7 +43,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: screenHeight * 0.1,
                       ),
                       Padding(
-                        padding:  EdgeInsets.symmetric(horizontal:screenWidth*0.05),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: screenWidth * 0.07),
                         child: Image.asset(
                           'Assets/images/logo.png',
                           height: screenHeight * 0.17,
@@ -54,12 +55,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: screenWidth * 0.07),
-                        child:  Align(
+                        child: Align(
                           alignment: Alignment.centerLeft,
                           child: ReusableTxt(
                               txtColor: themeColor,
                               fontWeight: FontWeight.w600,
-                              fontSize: screenWidth*0.038,
+                              fontSize: screenWidth * 0.038,
                               title: 'Open Page'),
                         ),
                       ),
@@ -125,17 +126,30 @@ class _HomeScreenState extends State<HomeScreen> {
           Positioned(
             bottom: screenHeight * 0.1,
             left: screenWidth * 0.15,
-            child: Container(
-              height: screenHeight * 0.06,
-              width: screenWidth * 0.7,
-              decoration: BoxDecoration(
-                  color: themeColor, borderRadius: BorderRadius.circular(7)),
-              child: Center(
-                child: ReusableTxt(
-                    txtColor: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    fontSize: screenWidth * 0.035,
-                    title: 'About App'),
+            child: GestureDetector(
+              onTap: () {
+                Get.defaultDialog(
+                    title: 'About App',
+                    content: ReusableTxt(
+                        txtColor: Colors.black,
+                        fontWeight: FontWeight.w600,
+                        txtAlign: TextAlign.left,
+                        fontSize: screenWidth * 0.03,
+                        title:
+                            'Urdu Fix" is your all-in-one app for mastering Urdu effortlessly.\nFrom basics to fluency, it covers alphabets, speaking, and typing. Start learning now!'));
+              },
+              child: Container(
+                height: screenHeight * 0.06,
+                width: screenWidth * 0.7,
+                decoration: BoxDecoration(
+                    color: themeColor, borderRadius: BorderRadius.circular(7)),
+                child: Center(
+                  child: ReusableTxt(
+                      txtColor: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: screenWidth * 0.035,
+                      title: 'About App'),
+                ),
               ),
             ),
           )
